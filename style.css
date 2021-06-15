@@ -1,7 +1,7 @@
-*{
+* {
   margin: 0;
   padding: 0;
-  font-family: Roboto,sans-serif;
+  font-family: Roboto, sans-serif;
   color: aliceblue;
 }
 
@@ -9,24 +9,27 @@ body {
   background-color: black;
 }
 
-#bg-particle{
+#bg-particle {
   width: 100%;
   position: fixed;
   z-index: -1;
 }
 
-.header{
+.header {
   position: relative;
   height: 100vh;
 }
 
 .card {
-  background:rgba(69, 69, 69, .7);
-  border: 1px solid #8D8D8D;
   box-sizing: border-box;
-  border-radius: 8px;
   width: 100%;
   margin: auto;
+
+  backdrop-filter: blur(3px) saturate(200%);
+  -webkit-backdrop-filter: blur(3px) saturate(200%);
+  background-color: rgba(17, 25, 40, 0.5);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
 }
 
 @media screen and (min-width: 500px) {

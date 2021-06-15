@@ -1,24 +1,21 @@
-var c = document.getElementById('particle');
-var ctx = c.getContext('2d', { alpha: false });
+var c = document.getElementById("particle");
+var ctx = c.getContext("2d", { alpha: false });
 let req, npalline, range;
 let palline = [];
 let linee = [];
-let cH, cW = 0;
-const n = 1; // number of ball every 100 px^2
-const r = 9; // range of edges, n% of canvas diagonal
-const max_range = 190;
+let cH,
+  cW = 0;
+const n = 0.5; // number of ball every 100 px^2
+const r = 1; // range of edges, n% of canvas diagonal
+const max_range = 300;
 const max_ball = 80;
 
 //La funzione init inizializza il canvas
 function init() {
-  if(window.innerWidth > screen.width)
-    ctx.canvas.width = screen.width;
-  else
-    ctx.canvas.width = window.innerWidth;
-  if(window.innerHeight > screen.height)
-    ctx.canvas.height = screen.height;
-  else
-    ctx.canvas.height = window.innerHeight;
+  if (window.innerWidth > screen.width) ctx.canvas.width = screen.width;
+  else ctx.canvas.width = window.innerWidth;
+  if (window.innerHeight > screen.height) ctx.canvas.height = screen.height;
+  else ctx.canvas.height = window.innerHeight;
 
   cH = ctx.canvas.height;
   cW = ctx.canvas.width;
@@ -41,7 +38,7 @@ function init() {
         Math.random() * 2 - 1
       )
     );
-    
+
   //Create array of lines
   for (let i = 0; i < palline.length; i++)
     for (let j = i + 1; j < palline.length; j++)
@@ -111,7 +108,7 @@ let Line = class {
 //Animate the canvas
 function animate() {
   //Clear the canvas
-  ctx.fillStyle = 'black';
+  ctx.fillStyle = "black";
   ctx.fillRect(0, 0, cW, cH);
 
   //Disegno l'array di palline
