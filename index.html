@@ -1,61 +1,92 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-		<head>
-      <!-- Required meta tags -->
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-      <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-      <link rel="stylesheet" type="text/css" href="style.css">
-      <link rel="icon" type="image/svg" href="assets/icons/code-slash-line.svg">
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" type="image/svg" href="assets/icons/code-slash-line.svg" />
 
-      <title>Federico Cafagna</title>
-    
-		</head>
-		<body>
+    <title>Federico Cafagna</title>
+  </head>
+  <body>
+    <!-- Background div particle -->
+    <canvas></canvas>
+    <script>
+      document.querySelector("canvas").id =
+        Math.random() > 0.5 ? "matrix" : "particle";
+    </script>
 
-      <!-- Background div particle -->
-      <div id="bg-particle">
-        <canvas id="particle"></canvas>
-      </div>
+    <!-- Header -->
+    <div class="header d-flex flex-column">
+      <div class="card justift-content-center">
+        <img src="assets/pic.png" alt="Profile pic" />
+        <div class="">
+          <h1 class="name text-center">Federico Cafagna</h1>
+          <p class="job text-center">Software Developer</p>
+          <p class="description text-center p-2">
+            I am currently working as NodeJS Backend Developer at
+            <a
+              href="https://efebia.com"
+              target="_blank"
+              style="text-decoration: none; color: green; font-weight: bolder"
+              >Efebia</a
+            >.</br>
+            My main focus is on the development of web applications and APIs, integration with
+            blockchain ecosystems and system integration.
 
-      <!-- Header -->
-      <div class="header d-flex flex-column">
-        <div class="card justift-content-center">
-          <img src="assets/pic.png" alt="Profile pic" />
-          <div class="">
-            <h1 class="name text-center">Federico Cafagna</h1>
-            <p class="job text-center">Software Developer and Student</p>
-            <p class="description text-center p-2">
-	      I am currently working as Backend Developer while I am studying for a B.S. in Music Information Science in the 
-              Department of Information and Computer Sciences 
-              at the University of Milan.
-            </p>
-          </div>
-          <hr>
-          <div class="icons d-flex justify-content-around">
-            <a href="https://github.com/gullomagico" target="_blank">
-              <img src="assets/icons/github.svg" />
-            </a>
-            <a href="https://www.linkedin.com/in/federicocafagna/" target="_blank">
-              <img src="assets/icons/linkedin.svg" />
-            </a>
-            <a href="https://codepen.io/gullomagico" target="_blank">
-              <img src="assets/icons/codepen.svg" />
-            </a>
-            <a href="mailto:info@federicocafagna.it">
-              <img src="assets/icons/mail.svg" />
-            </a>
-          </div>
+          </p>
+        </div>
+        <hr />
+        <div class="icons d-flex justify-content-around">
+          <a href="https://github.com/gullomagico" target="_blank">
+            <img src="assets/icons/github.svg" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/federicocafagna/"
+            target="_blank"
+          >
+            <img src="assets/icons/linkedin.svg" />
+          </a>
+          <a href="https://codepen.io/gullomagico" target="_blank">
+            <img src="assets/icons/codepen.svg" />
+          </a>
+          <a href="mailto:info@federicocafagna.it">
+            <img src="assets/icons/mail.svg" />
+          </a>
         </div>
       </div>
+    </div>
 
-      <!-- Optional JavaScript -->
-      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-      <script src="js/particle.js"></script>
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-		</body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/particle.js"></script>
+    <script src="js/matrix.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
