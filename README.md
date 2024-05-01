@@ -1,4 +1,4 @@
-[![pages-build-deployment](https://github.com/gullomagico/gullomagico.github.io/actions/workflows/pages/pages-build-deployment/badge.svg?branch=main)](https://github.com/gullomagico/gullomagico.github.io/actions/workflows/pages/pages-build-deployment)
+[![Deploy](https://github.com/gullomagico/gullomagico.github.io/actions/workflows/static.yml/badge.svg)](https://github.com/gullomagico/gullomagico.github.io/actions/workflows/static.yml)
 
 # gullomagico.github.io
 
