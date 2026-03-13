@@ -1,0 +1,80 @@
+---
+import { Image } from 'astro:assets';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import mePhoto from '../assets/me.png';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section id="about" class="relative py-24 md:py-32 px-6">
+	<div class="max-w-5xl mx-auto">
+		<!-- Section Header -->
+		<div class="reveal">
+			<span class="font-mono text-sm text-accent/50 tracking-wider">{t('about.label')}</span>
+			<h2 class="text-3xl md:text-4xl font-bold text-heading mt-2">{t('about.title')}</h2>
+		</div>
+
+		<div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center mt-14">
+			<!-- Photo -->
+			<div class="reveal flex justify-center">
+				<div class="about-photo-wrapper">
+					<Image
+						src={mePhoto}
+						alt="Federico Cafagna - Software Engineer"
+						class="about-photo"
+						width={880}
+						height={880}
+						format="webp"
+						quality={80}
+						loading="eager"
+						fetchpriority="high"
+					/>
+				</div>
+			</div>
+
+			<!-- Bio -->
+			<div>
+				<div class="reveal">
+					<p class="text-body text-lg leading-relaxed">
+						{t('about.bio1')}
+						{' '}<a
+							href="https://efebia.com"
+							target="_blank"
+							rel="noopener"
+							class="text-accent hover:text-accent/80 transition-colors font-medium">{t('about.bio1.link')}</a
+						>{t('about.bio1.end')}
+					</p>
+				</div>
+				<div class="reveal">
+					<p class="text-body text-lg leading-relaxed mt-4">
+						{t('about.bio2')}
+					</p>
+				</div>
+
+				<!-- Detail cards -->
+				<div class="grid grid-cols-2 gap-3 mt-8 reveal">
+					<div class="detail-card">
+						<span class="font-mono text-xs text-accent/60 uppercase tracking-wider">{t('about.location')}</span>
+						<span class="text-heading text-sm mt-1">{t('about.location.value')}</span>
+					</div>
+					<div class="detail-card">
+						<span class="font-mono text-xs text-accent/60 uppercase tracking-wider">{t('about.experience')}</span>
+						<span class="text-heading text-sm mt-1">{t('about.experience.value')}</span>
+					</div>
+					<div class="detail-card">
+						<span class="font-mono text-xs text-accent/60 uppercase tracking-wider">{t('about.company')}</span>
+						<span class="text-heading text-sm mt-1">Efebia</span>
+					</div>
+					<div class="detail-card">
+						<span class="font-mono text-xs text-accent/60 uppercase tracking-wider">{t('about.status')}</span>
+						<span class="text-accent text-sm mt-1 flex items-center gap-1.5">
+							<span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+							{t('about.status.value')}
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

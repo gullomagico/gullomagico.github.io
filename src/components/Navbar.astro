@@ -1,0 +1,57 @@
+---
+import { getLangFromUrl, useTranslations, getLocalePath } from '../i18n/utils';
+import type { Lang } from '../i18n/ui';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const otherLang: Lang = lang === 'en' ? 'it' : 'en';
+---
+
+<nav id="navbar" class="fixed top-0 w-full z-50">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <!-- Logo -->
+    <a href={getLocalePath(lang)} class="font-mono text-xl font-bold tracking-tight text-heading">
+      cafa<span class="text-accent">.</span>dev
+    </a>
+
+    <!-- Desktop Nav -->
+    <div class="hidden md:flex items-center gap-8">
+      <a href={`${getLocalePath(lang)}#about`} class="nav-link">{t('nav.about')}</a>
+      <a href={`${getLocalePath(lang)}#skills`} class="nav-link">{t('nav.skills')}</a>
+      <a href={`${getLocalePath(lang)}#experience`} class="nav-link">{t('nav.experience')}</a>
+      <a href={`${getLocalePath(lang)}#contact`} class="nav-link">{t('nav.contact')}</a>
+      <a
+        href={getLocalePath(otherLang)}
+        class="font-mono text-xs text-muted hover:text-accent transition-colors border border-border hover:border-accent/30 px-2 py-1 rounded"
+      >
+        {otherLang}
+      </a>
+    </div>
+
+    <!-- Mobile Toggle -->
+    <button id="menu-toggle" class="md:hidden p-2 text-white/60 hover:text-white transition-colors" aria-label="Toggle menu">
+      <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+      <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-border bg-bg/95 backdrop-blur-xl">
+    <div class="px-6 py-4 flex flex-col gap-4">
+      <a href={`${getLocalePath(lang)}#about`} class="nav-link-mobile">{t('nav.about')}</a>
+      <a href={`${getLocalePath(lang)}#skills`} class="nav-link-mobile">{t('nav.skills')}</a>
+      <a href={`${getLocalePath(lang)}#experience`} class="nav-link-mobile">{t('nav.experience')}</a>
+      <a href={`${getLocalePath(lang)}#contact`} class="nav-link-mobile">{t('nav.contact')}</a>
+      <a
+        href={getLocalePath(otherLang)}
+        class="nav-link-mobile text-accent/70"
+      >
+        {otherLang}
+      </a>
+    </div>
+  </div>
+</nav>

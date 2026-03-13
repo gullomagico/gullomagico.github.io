@@ -1,0 +1,7 @@
+# Security Policy for cafa.dev
+# https://securitytxt.org/ — RFC 9116
+
+Contact: mailto:ciao@cafa.dev
+Expires: 2027-03-13T00:00:00.000Z
+Preferred-Languages: en, it
+Canonical: https://cafa.dev/.well-known/security.txt

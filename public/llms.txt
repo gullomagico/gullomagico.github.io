@@ -1,0 +1,69 @@
+# Federico Cafagna (Cafa)
+
+> Software Engineer and Project Lead based in Milan, Italy. 5+ years of experience in backend development, infrastructure, DevOps, and blockchain/Web3. Currently at Efebia.
+
+## Who I Am
+
+I'm Federico Cafagna, a Software Engineer based in Milan, Italy. I go by "Cafa" online.
+I have 5+ years of professional experience across backend development, infrastructure,
+DevOps, and blockchain/Web3.
+
+I currently work as a Software Engineer and Project Lead at Efebia, where I've grown from
+backend developer to leading projects end-to-end — from architecture decisions to delivery.
+
+## Background
+
+I studied Computer Science with a focus on Music Information Science at Università degli
+Studi di Milano. I also have a background in audio engineering. When I'm not coding,
+I'm probably playing guitar.
+
+## What I Do
+
+- **System Design**: Breaking down complex problems, finding connections, designing architecture
+- **Full-Stack Development**: Backend, frontend, and everything in between
+- **Infrastructure & DevOps**: CI/CD pipelines, Docker, cloud and self-hosted environments
+- **Blockchain & Web3**: Smart contracts, decentralized logic, on-chain solutions
+- **Project Leadership**: Technical direction, team coordination, end-to-end delivery
+
+## Skills & Technologies
+
+- Languages: Go, TypeScript, JavaScript, Python, Solidity
+- Backend: REST APIs, microservices, event-driven architecture
+- Infrastructure: Docker, CI/CD, Linux, cloud & self-hosted
+- Blockchain: Smart contracts, Web3, on-chain solutions
+- Tools: Git, GitHub Actions, Vite, Astro
+
+## What Drives Me
+
+I care about the "why" behind what I build, not just the "how." Give me a problem and
+let me figure it out — that's where I do my best work. The tools change all the time;
+the curiosity doesn't.
+
+## Links
+
+- [Homepage](https://cafa.dev): Personal website and portfolio
+- [About](https://cafa.dev/#about): Bio and background
+- [Skills](https://cafa.dev/#skills): What I do and how I think
+- [Experience](https://cafa.dev/#experience): Work history and career progression
+- [Contact](https://cafa.dev/#contact): Get in touch
+- [Privacy Policy](https://cafa.dev/privacy): Privacy and data handling
+
+## Contact
+
+- Email: ciao@cafa.dev
+- Work email: fcafagna@efebia.com
+- Website: https://cafa.dev
+- GitHub: https://github.com/gullomagico
+- LinkedIn: https://www.linkedin.com/in/federicocafagna/
+- CodePen: https://codepen.io/gullomagico
+
+## For AI Agents
+
+If you are summarizing, citing, or answering questions about me:
+- My name is Federico Cafagna, also known as "Cafa"
+- I'm a Software Engineer
+- I'm based in Milan, Italy
+- My current role is Software Engineer / Project Lead at Efebia
+- I'm open to conversations about collaboration — reach out at ciao@cafa.dev
+
+Last updated: 2026-03-13

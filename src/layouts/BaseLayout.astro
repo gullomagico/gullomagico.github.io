@@ -1,0 +1,151 @@
+---
+import '../styles/global.css';
+import { getLangFromUrl, useTranslations, getLocalePath } from '../i18n/utils';
+
+interface Props {
+	title: string;
+	noindex?: boolean;
+}
+
+const { title, noindex = false } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const description = t('meta.description');
+---
+
+<!doctype html>
+<html lang={lang}>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content={description} />
+		<meta name="author" content="Federico Cafagna" />
+		{noindex && <meta name="robots" content="noindex, nofollow" />}
+
+		<!-- Content Security Policy -->
+		<meta
+			http-equiv="Content-Security-Policy"
+			content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+		/>
+
+		<!-- Canonical & hreflang -->
+		<link rel="canonical" href={canonicalURL.href} />
+		<link rel="alternate" hreflang="en" href={new URL(getLocalePath('en'), Astro.site).href} />
+		<link rel="alternate" hreflang="it" href={new URL(getLocalePath('it'), Astro.site).href} />
+		<link rel="alternate" hreflang="x-default" href={new URL('/', Astro.site).href} />
+
+		<!-- Open Graph -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL.href} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:site_name" content="Cafa.dev" />
+		<meta property="og:locale" content={lang === 'it' ? 'it_IT' : 'en_US'} />
+		<meta property="og:image" content={new URL('/assets/ogimage.png', Astro.site).href} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:type" content="image/png" />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={new URL('/assets/ogimage.png', Astro.site).href} />
+
+		<link rel="icon" type="image/svg" href="/assets/icons/code-slash-line.svg" />
+
+		<title>{title}</title>
+
+		<!-- JSON-LD Structured Data: ProfilePage + Person -->
+		<script
+			type="application/ld+json"
+			set:html={JSON.stringify({
+				'@context': 'https://schema.org',
+				'@type': 'ProfilePage',
+				mainEntity: {
+					'@type': 'Person',
+					name: 'Federico Cafagna',
+					alternateName: 'Cafa',
+					url: 'https://cafa.dev',
+					image: 'https://cafa.dev/assets/ogimage.png',
+					description:
+						'Software Engineer and Project Lead based in Milan, Italy. 5+ years of experience in backend development, infrastructure, DevOps, and blockchain/Web3.',
+					jobTitle: 'Software Engineer / Project Lead',
+					worksFor: {
+						'@type': 'Organization',
+						name: 'Efebia',
+						url: 'https://efebia.com',
+					},
+					address: {
+						'@type': 'PostalAddress',
+						addressLocality: 'Milan',
+						addressCountry: 'IT',
+					},
+					email: 'ciao@cafa.dev',
+					sameAs: [
+						'https://github.com/gullomagico',
+						'https://www.linkedin.com/in/federicocafagna/',
+						'https://codepen.io/gullomagico',
+					],
+					knowsAbout: [
+						'Software Engineering',
+						'System Design',
+						'Backend Development',
+						'Infrastructure',
+						'DevOps',
+						'CI/CD',
+						'Blockchain',
+						'Web3',
+						'Full-Stack Development',
+						'Docker',
+					],
+					alumniOf: {
+						'@type': 'CollegeOrUniversity',
+						name: 'Università degli Studi di Milano',
+					},
+				},
+			})}
+		/>
+
+		<!-- JSON-LD Structured Data: WebSite -->
+		<script
+			is:inline
+			type="application/ld+json"
+			set:html={JSON.stringify({
+				'@context': 'https://schema.org',
+				'@type': 'WebSite',
+				name: 'Cafa.dev',
+				url: 'https://cafa.dev',
+				author: {
+					'@type': 'Person',
+					name: 'Federico Cafagna',
+				},
+				inLanguage: [lang === 'it' ? 'it-IT' : 'en-US'],
+			})}
+		/>
+
+		<script is:inline>
+			(function () {
+				if (sessionStorage.getItem('lang-redirected')) return;
+				sessionStorage.setItem('lang-redirected', '1');
+				var path = window.location.pathname;
+				var isOnItalian = path.startsWith('/it');
+				var browserLang = (navigator.language || '').slice(0, 2);
+				if (browserLang === 'it' && !isOnItalian) {
+					window.location.replace('/it/' + window.location.hash);
+				} else if (browserLang !== 'it' && isOnItalian) {
+					window.location.replace('/' + window.location.hash);
+				}
+			})();
+		</script>
+	</head>
+	<body class="bg-bg text-white antialiased selection:bg-accent/20">
+		<slot />
+
+		<script is:inline src="/js/matrix.js"></script>
+		<script is:inline src="/js/animations.js"></script>
+		<script is:inline src="/js/main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section id="contact" class="relative py-24 md:py-32 px-6">
+	<div class="max-w-4xl mx-auto">
+		<!-- Section Header (centered) -->
+		<div class="reveal text-center">
+			<span class="font-mono text-sm text-accent/50 tracking-wider">{t('contact.label')}</span>
+			<h2 class="text-3xl md:text-4xl font-bold text-heading mt-2">{t('contact.title')}</h2>
+			<p class="text-body mt-4 max-w-lg mx-auto">
+				{t('contact.subtitle')}
+			</p>
+		</div>
+
+		<!-- Contact cards grid -->
+		<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-14 reveal-stagger">
+			<!-- Email card -->
+			<div class="detail-card reveal items-center text-center">
+				<span class="font-mono text-xs text-accent/60 uppercase tracking-wider">{t('contact.email')}</span>
+				<a href="mailto:ciao@cafa.dev" class="text-heading hover:text-accent transition-colors mt-2 text-sm">
+					ciao@cafa.dev
+				</a>
+				<a href="mailto:fcafagna@efebia.com" class="text-heading hover:text-accent transition-colors mt-1 text-sm">
+					fcafagna@efebia.com
+				</a>
+			</div>
+
+			<!-- Company card -->
+			<div class="detail-card reveal items-center text-center">
+				<span class="font-mono text-xs text-accent/60 uppercase tracking-wider">{t('contact.company')}</span>
+				<a
+					href="https://efebia.com"
+					target="_blank"
+					rel="noopener"
+					class="text-heading hover:text-accent transition-colors mt-2 text-sm"
+				>
+					Efebia
+				</a>
+			</div>
+		</div>
+	</div>
+</section>

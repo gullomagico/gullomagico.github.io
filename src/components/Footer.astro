@@ -1,0 +1,99 @@
+---
+import { getLangFromUrl, useTranslations, getLocalePath } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const navLinks = [
+	{ label: t('footer.nav.about'), href: `${getLocalePath(lang)}#about` },
+	{ label: t('footer.nav.skills'), href: `${getLocalePath(lang)}#skills` },
+	{ label: t('footer.nav.experience'), href: `${getLocalePath(lang)}#experience` },
+	{ label: t('footer.nav.contact'), href: `${getLocalePath(lang)}#contact` },
+];
+
+const socials = [
+	{ label: 'GitHub', href: 'https://github.com/gullomagico', icon: '/assets/icons/github.svg' },
+	{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/federicocafagna/', icon: '/assets/icons/linkedin.svg' },
+	{ label: 'CodePen', href: 'https://codepen.io/gullomagico', icon: '/assets/icons/codepen.svg' },
+];
+---
+
+<footer class="relative border-t border-border pt-16 pb-8 px-6">
+	<div class="max-w-5xl mx-auto">
+		<!-- Top row: brand + nav + socials -->
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+			<!-- Brand -->
+			<div>
+				<a
+					href={`${getLocalePath(lang)}#hero`}
+					class="inline-block font-mono text-xl font-bold text-heading tracking-tight"
+				>
+					cafa<span class="text-accent">.</span>dev
+				</a>
+				<p class="text-body text-sm mt-3 max-w-xs leading-relaxed">
+					{t('footer.desc')}
+				</p>
+			</div>
+
+			<!-- Nav links -->
+			<div>
+				<span class="block font-mono text-xs text-accent uppercase tracking-wider mb-4">{t('footer.nav')}</span>
+				<ul class="space-y-2.5">
+					{
+						navLinks.map((link) => (
+							<li>
+								<a href={link.href} class="text-sm text-body hover:text-accent transition-colors">
+									{link.label}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+
+			<!-- Socials -->
+			<div>
+				<span class="block font-mono text-xs text-accent uppercase tracking-wider mb-4">{t('footer.connect')}</span>
+				<div class="flex gap-3">
+					{
+						socials.map((s) => (
+							<a
+								href={s.href}
+								target="_blank"
+								rel="noopener"
+								class="social-link"
+								aria-label={s.label}
+							>
+								<img src={s.icon} class="w-5 h-5" alt="" />
+							</a>
+						))
+					}
+				</div>
+				<a href="mailto:ciao@cafa.dev" class="text-sm text-muted hover:text-accent transition-colors mt-4 block">ciao@cafa.dev</a>
+				<a href="mailto:fcafagna@efebia.com" class="text-sm text-muted hover:text-accent transition-colors mt-1 block">fcafagna@efebia.com</a>
+			</div>
+		</div>
+
+		<!-- Divider -->
+		<div class="section-divider mt-12 mb-6"></div>
+
+		<!-- Bottom row -->
+		<div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+			<p class="font-mono text-xs text-muted/50">
+				&copy; {new Date().getFullYear()} Federico Cafagna
+			</p>
+			<div class="flex items-center gap-4">
+				<a
+					href={getLocalePath(lang, 'privacy')}
+					class="font-mono text-xs text-muted/40 hover:text-accent transition-colors"
+				>
+					{t('footer.privacy')}
+				</a>
+				<span class="text-muted/20">·</span>
+				<p class="text-xs text-muted/40">
+					{t('footer.built')}
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>

@@ -1,0 +1,40 @@
+---
+import { getLangFromUrl, useTranslations, getLocalePath } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+	<!-- Canvas animation background -->
+	<canvas class="absolute inset-0 w-full h-full" aria-hidden="true"></canvas>
+
+	<!-- Dark backdrop for readability -->
+	<div class="hero-backdrop" aria-hidden="true"></div>
+
+	<!-- Content -->
+	<div class="relative z-10 text-center px-6 max-w-3xl mx-auto hero-content">
+		<!-- Main heading -->
+		<h1 class="text-6xl md:text-8xl font-bold tracking-tighter text-heading">
+			Cafa<span class="text-accent">.</span>dev
+		</h1>
+
+		<!-- Subtitle -->
+		<p class="text-lg md:text-xl text-body mt-6 max-w-xl mx-auto leading-relaxed">
+			{t('hero.subtitle')}
+		</p>
+
+		<!-- CTA Buttons -->
+		<div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+			<a href={`${getLocalePath(lang)}#contact`} class="btn-primary">
+				{t('hero.cta')}
+				<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+				</svg>
+			</a>
+			<a href={`${getLocalePath(lang)}#about`} class="btn-ghost">
+				{t('hero.learn')}
+			</a>
+		</div>
+	</div>
+</section>

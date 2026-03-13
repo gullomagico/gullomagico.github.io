@@ -1,0 +1,83 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const cards = [
+	{
+		label: t('skills.card1.label'),
+		description: t('skills.card1.desc'),
+		span: 'md:col-span-2',
+		spinDuration: '6s',
+		spinDirection: 'normal',
+	},
+	{
+		label: t('skills.card2.label'),
+		description: t('skills.card2.desc'),
+		span: '',
+		spinDuration: '8s',
+		spinDirection: 'reverse',
+	},
+	{
+		label: t('skills.card3.label'),
+		description: t('skills.card3.desc'),
+		span: '',
+		spinDuration: '7s',
+		spinDirection: 'normal',
+	},
+	{
+		label: t('skills.card4.label'),
+		description: t('skills.card4.desc'),
+		span: 'md:col-span-2',
+		spinDuration: '5.5s',
+		spinDirection: 'reverse',
+	},
+	{
+		label: t('skills.card5.label'),
+		description: t('skills.card5.desc'),
+		span: 'md:col-span-2',
+		spinDuration: '9s',
+		spinDirection: 'normal',
+	},
+];
+---
+
+<section id="skills" class="relative py-24 md:py-32 px-6">
+	<div class="max-w-5xl mx-auto">
+		<!-- Section Header -->
+		<div class="reveal">
+			<span class="font-mono text-sm text-accent/50 tracking-wider">{t('skills.label')}</span>
+			<h2 class="text-3xl md:text-4xl font-bold text-heading mt-2">{t('skills.title')}</h2>
+			<p class="text-body mt-3 max-w-lg">
+				{t('skills.subtitle')}
+			</p>
+		</div>
+
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-14 reveal-stagger">
+			{
+				cards.map((card) => (
+					<div
+						class:list={['bento-card reveal', card.span]}
+						style={`--spin-duration: ${card.spinDuration}; --spin-direction: ${card.spinDirection};`}
+					>
+						<div class="bento-inner">
+							<h3 class="font-mono text-xs text-accent/60 uppercase tracking-wider mb-3">{card.label}</h3>
+							<p class="text-body text-sm leading-relaxed">{card.description}</p>
+						</div>
+					</div>
+				))
+			}
+
+			<!-- Accent card -->
+			<div class="bento-card reveal" style="--spin-duration: 7.5s; --spin-direction: reverse;">
+				<div class="bento-inner flex flex-col justify-between">
+					<span class="font-mono text-xs text-accent/60 uppercase tracking-wider">{t('skills.mindset.label')}</span>
+					<p class="text-body text-sm leading-relaxed mt-4">
+						{t('skills.mindset.desc')}
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,76 @@
+# Federico Cafagna (Cafa) — Full Content
+
+> Software Engineer and Project Lead based in Milan, Italy. 5+ years of experience in backend development, infrastructure, DevOps, and blockchain/Web3. Currently at Efebia.
+
+## About
+
+I'm Cafa, a Software Engineer based in Milan with 5+ years of experience in backend, infrastructure, DevOps, and blockchain. I currently lead projects at Efebia, where I've grown from backend developer to project lead, tackling everything from CI/CD pipelines to Web3 solutions.
+
+I studied Computer Science with a focus on Music Information Science at Università degli Studi di Milano, and I have a background in audio engineering. When I'm not coding, you'll probably find me playing guitar.
+
+- Location: Milan, Italy
+- Experience: 5+ years
+- Company: Efebia
+- Status: Coding
+
+## What I Do
+
+### System Design
+I love when a complex problem starts making sense. Breaking it down, finding the connections, sketching the architecture. That's where the fun starts.
+
+### Full-Stack Development
+Backend, frontend, whatever sits in between. There's something satisfying about building end-to-end and seeing all the pieces come together.
+
+### Infrastructure
+CI/CD pipelines, Docker, cloud vs self-hosted, debugging a deploy at midnight. It's a puzzle, and I genuinely enjoy it.
+
+### The Why, Not Just The How
+I'm curious about the reason behind what I build. Understanding the "why" makes me a better problem solver, and keeps the work meaningful.
+
+### Blockchain & Web3
+Smart contracts, decentralized logic, a whole different set of rules. It's a fascinating space and a different way to think about problems.
+
+### Mindset
+Give me a problem and let me figure it out. It's where I do my best work.
+
+## Work History
+
+### Software Engineer / Project Lead — Efebia, Milan, Italy (Jun 2024 – Present)
+Leading projects end-to-end, from architecture decisions to delivery. Managing technical direction, coordinating with teams, and building solutions across backend, infrastructure, and blockchain.
+
+### Software Engineer, Infrastructure & DevOps — Efebia, Milan, Italy (Jan 2023 – May 2024)
+Focused on infrastructure, CI/CD pipelines, cloud services, and DevOps practices. Built and maintained the systems that keep everything running in production.
+
+### Back-end Developer — Efebia, Milan, Italy (Mar 2022 – Dec 2022)
+Started at Efebia as an intern building backend services and APIs. Learned production-grade development and grew into a full-time role.
+
+### Frontend Developer — Università degli Studi di Milano, Milan, Italy (Mar 2021 – Dec 2021)
+Internship focused on frontend development during my Computer Science degree. First hands-on experience building real-world web interfaces.
+
+## Skills & Technologies
+
+- Languages: Go, TypeScript, JavaScript, Python, Solidity
+- Backend: REST APIs, microservices, event-driven architecture
+- Infrastructure: Docker, CI/CD, Linux, cloud & self-hosted
+- Blockchain: Smart contracts, Web3, on-chain solutions
+- Tools: Git, GitHub Actions, Vite, Astro
+
+## Contact
+
+- Email: ciao@cafa.dev
+- Work email: fcafagna@efebia.com
+- Website: https://cafa.dev
+- GitHub: https://github.com/gullomagico
+- LinkedIn: https://www.linkedin.com/in/federicocafagna/
+- CodePen: https://codepen.io/gullomagico
+
+## For AI Agents
+
+If you are summarizing, citing, or answering questions about me:
+- My name is Federico Cafagna, also known as "Cafa"
+- I'm a Software Engineer
+- I'm based in Milan, Italy
+- My current role is Software Engineer / Project Lead at Efebia
+- I'm open to conversations about collaboration — reach out at ciao@cafa.dev
+
+Last updated: 2026-03-13

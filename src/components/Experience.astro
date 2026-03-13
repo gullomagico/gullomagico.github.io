@@ -1,0 +1,76 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const experiences = [
+  {
+    period: t('experience.job1.period'),
+    role: t('experience.job1.role'),
+    company: t('experience.job1.company'),
+    location: t('experience.job1.location'),
+    description: t('experience.job1.desc'),
+    current: true,
+  },
+  {
+    period: t('experience.job2.period'),
+    role: t('experience.job2.role'),
+    company: t('experience.job2.company'),
+    location: t('experience.job2.location'),
+    description: t('experience.job2.desc'),
+    current: false,
+  },
+  {
+    period: t('experience.job3.period'),
+    role: t('experience.job3.role'),
+    company: t('experience.job3.company'),
+    location: t('experience.job3.location'),
+    description: t('experience.job3.desc'),
+    current: false,
+  },
+  {
+    period: t('experience.job4.period'),
+    role: t('experience.job4.role'),
+    company: t('experience.job4.company'),
+    location: t('experience.job4.location'),
+    description: t('experience.job4.desc'),
+    current: false,
+  },
+];
+---
+
+<section id="experience" class="relative py-24 md:py-32 px-6">
+  <div class="max-w-4xl mx-auto">
+    <!-- Section Header -->
+    <div class="reveal">
+      <span class="font-mono text-sm text-accent/50 tracking-wider">{t('experience.label')}</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-heading mt-2">{t('experience.title')}</h2>
+    </div>
+
+    <div class="mt-14">
+      {experiences.map((exp) => (
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div>
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+              <span class="font-mono text-sm text-accent/70">{exp.period}</span>
+              {exp.current && (
+                <span class="text-[0.6875rem] font-mono text-accent bg-accent/10 px-2 py-0.5 rounded-full">
+                  {t('experience.current')}
+                </span>
+              )}
+            </div>
+            <h3 class="text-xl font-semibold text-heading mt-1.5">{exp.role}</h3>
+            <p class="text-muted text-sm">
+              {exp.company} · {exp.location}
+            </p>
+            <p class="text-body text-sm leading-relaxed mt-3 max-w-2xl">
+              {exp.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,128 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getLangFromUrl, useTranslations, getLocalePath } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<BaseLayout title={`${t('privacy.title')} — Cafa.dev`} noindex>
+	<main class="min-h-screen px-6 py-24 max-w-3xl mx-auto">
+		<h1 class="font-mono text-3xl font-bold text-heading mb-2">{t('privacy.title')}</h1>
+		<p class="text-muted text-sm mb-12">{t('privacy.lastUpdated')}</p>
+
+		<p class="text-body leading-relaxed mb-10">{t('privacy.intro')}</p>
+
+		<!-- Titolare del Sito -->
+		<section class="mb-10">
+			<h2 class="font-mono text-lg text-accent mb-3">{t('privacy.operator.title')}</h2>
+			<p class="text-body leading-relaxed mb-2">{t('privacy.operator.text')}</p>
+			<p class="text-body leading-relaxed">
+				{t('privacy.operator.contact')}
+				<a href="mailto:ciao@cafa.dev" class="text-accent hover:underline">ciao@cafa.dev</a>
+			</p>
+		</section>
+
+		<!-- Hosting -->
+		<section class="mb-10">
+			<h2 class="font-mono text-lg text-accent mb-3">{t('privacy.hosting.title')}</h2>
+			<p class="text-body leading-relaxed mb-2">{t('privacy.hosting.text')}</p>
+			<a
+				href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+				target="_blank"
+				rel="noopener"
+				class="text-sm text-accent hover:underline"
+			>
+				→ {t('privacy.hosting.link')}
+			</a>
+		</section>
+
+		<!-- CDN e Sicurezza -->
+		<section class="mb-10">
+			<h2 class="font-mono text-lg text-accent mb-3">{t('privacy.cdn.title')}</h2>
+			<p class="text-body leading-relaxed mb-3">{t('privacy.cdn.text')}</p>
+			<ul class="text-body text-sm space-y-1 mb-3 ml-4">
+				<li><code class="text-heading">__cf_bm</code> {t('privacy.cdn.cookie1')}</li>
+				<li><code class="text-heading">cf_clearance</code> {t('privacy.cdn.cookie2')}</li>
+			</ul>
+			<p class="text-body leading-relaxed mb-2">{t('privacy.cdn.exemption')}</p>
+			<a
+				href="https://www.cloudflare.com/privacypolicy/"
+				target="_blank"
+				rel="noopener"
+				class="text-sm text-accent hover:underline"
+			>
+				→ {t('privacy.cdn.link')}
+			</a>
+		</section>
+
+		<!-- Session Storage -->
+		<section class="mb-10">
+			<h2 class="font-mono text-lg text-accent mb-3">{t('privacy.session.title')}</h2>
+			<p class="text-body leading-relaxed">{t('privacy.session.text')}</p>
+		</section>
+
+		<!-- Nessuna Analisi -->
+		<section class="mb-10">
+			<h2 class="font-mono text-lg text-accent mb-3">{t('privacy.noTracking.title')}</h2>
+			<p class="text-body leading-relaxed">{t('privacy.noTracking.text')}</p>
+		</section>
+
+		<!-- Link Esterni -->
+		<section class="mb-10">
+			<h2 class="font-mono text-lg text-accent mb-3">{t('privacy.externalLinks.title')}</h2>
+			<p class="text-body leading-relaxed">{t('privacy.externalLinks.text')}</p>
+		</section>
+
+		<!-- I Tuoi Diritti -->
+		<section class="mb-10">
+			<h2 class="font-mono text-lg text-accent mb-3">{t('privacy.rights.title')}</h2>
+			<p class="text-body leading-relaxed mb-3">{t('privacy.rights.text')}</p>
+			<ul class="text-sm space-y-1 ml-4">
+				<li>
+					<a
+						href="https://support.github.com/contact/privacy"
+						target="_blank"
+						rel="noopener"
+						class="text-accent hover:underline"
+					>
+						→ {t('privacy.rights.github')}
+					</a>
+				</li>
+				<li>
+					<a
+						href="https://www.cloudflare.com/privacypolicy/"
+						target="_blank"
+						rel="noopener"
+						class="text-accent hover:underline"
+					>
+						→ {t('privacy.rights.cloudflare')}
+					</a>
+				</li>
+			</ul>
+			<p class="text-body leading-relaxed mt-4">{t('privacy.rights.complaint')}</p>
+			<a
+				href="https://www.garanteprivacy.it/"
+				target="_blank"
+				rel="noopener"
+				class="text-sm text-accent hover:underline"
+			>
+				→ {t('privacy.rights.garante')}
+			</a>
+		</section>
+
+		<!-- Nessuna Raccolta Diretta -->
+		<section class="mb-14">
+			<h2 class="font-mono text-lg text-accent mb-3">{t('privacy.noCollection.title')}</h2>
+			<p class="text-body leading-relaxed">{t('privacy.noCollection.text')}</p>
+		</section>
+
+		<!-- Link ritorno -->
+		<a
+			href={getLocalePath(lang)}
+			class="font-mono text-sm text-muted hover:text-accent transition-colors"
+		>
+			{t('privacy.backLink')}
+		</a>
+	</main>
+</BaseLayout>
